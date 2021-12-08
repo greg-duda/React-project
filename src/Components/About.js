@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Info from './Info'
-const InfoBtn = styled.button `
+import { useHistory } from 'react-router'
+import { HaJeden } from './Home'
+export const InfoBtn = styled.button `
 margin: 10px auto;
 display: block;
 height: 30px;
@@ -27,18 +29,17 @@ transition: 0.5s;
 `
 const About = () => {
 const [show, setShow] = useState(false)
+const history = useHistory()
 
     return(
         <div>
+            <HaJeden>O MNIE</HaJeden>
             <div className='About-content'>
                 <div className='About-container'>
                      <div className='devstock'></div>
                      <InfoBtn onClick={() => {
-                         setShow(!show)
-                     }}>Show info</InfoBtn>
-                     {
-                     show? <Info tel="661-778-000" email="greg.duda96@gmail.com" age="24" surname="Duda" name="Grzegorz" /> : null
-                     }
+                         setShow(!show)}}>{show ? "Ukryj info" : "Pokaz info"}</InfoBtn>{show? <Info tel="661-778-000" email="greg.duda96@gmail.com" age="24" surname="Duda" name="Grzegorz" /> : null }
+                         <InfoBtn onClick={() => history.push('/Home')}>Wróć na stronę główną</InfoBtn>
                 </div>
                 
             </div>

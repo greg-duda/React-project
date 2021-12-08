@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { HaJeden } from './Home'
 
 const RegularValue = styled.span`
 color: white;
@@ -70,20 +71,18 @@ function Counter() {
     
     
     return (
+        <>
         
         <div className='counter'>
-          
+        <HaJeden>LICZNIK</HaJeden>
         <StyledBtn onClick={decrement}><OnlySpan>-</OnlySpan></StyledBtn>
-        {/* <StyledValue>{count}</StyledValue> */}
         {count % 5 === 0 && count !== 0 ? <StyledValue>{count}</StyledValue> : <RegularValue>{count}</RegularValue>}
         <StyledBtn onClick={increment} plus><OnlySpan >+</OnlySpan></StyledBtn>
         <br></br>
         <ResetBtn onClick={reset}><OnlySpan reset>RESET</OnlySpan></ResetBtn>
         </div>
-        
+        </>
     )
 }
 
 export default Counter
-// const decrement = () => setCount(prev => prev -1)
-    // const increment = () => setCount(prev => prev +1)

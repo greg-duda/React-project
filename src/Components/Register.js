@@ -1,8 +1,9 @@
-import React from 'react'
+import axios from 'axios'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { HaJeden } from './Home'
-
-const Register = () => {
+import { useHistory } from 'react-router'
+import { InfoBtn } from './About'
 const SignDiv = styled.div`
 margin: 50px auto;
 background-color: whitesmoke;
@@ -37,29 +38,46 @@ border: none;
 }
 `
 
+const Register = () => {
+const [name, setName]= useState('')
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
+const [surname, setSurname] = useState('')
+const history = useHistory()
+
+
+
+
+
+const submitHandler = (e) => {
+    e.preventDefault()    
+            const user = {name, surname, email, password}
+            axios.post('http://localhost:3002/users', user)
+            .then(history.push('/Succes'))   
+}
+    
+
     return(
         <div>
             <HaJeden>DOŁĄCZ DO NAS</HaJeden>
         <SignDiv>
-            <form>
+            <form onSubmit={submitHandler}>
             <label>Imię
-                <SignInput placeholder='Wpisz swoje imię...' />
+                <SignInput onChange={(e) => setName(e.target.value.toLowerCase())} required placeholder='Wpisz swoje imię...' />
                 </label>
                 <label>Nazwisko
-                <SignInput placeholder='Wpisz swoje nazwisko...' />
+                <SignInput onChange={(e) => setSurname(e.target.value.toLowerCase())} required placeholder='Wpisz swoje nazwisko...' />
                 </label>
                 <label>E-MAIL
-                <SignInput type='email' placeholder='Wpisz swój e-mail...' />
+                <SignInput onChange={(e) => setEmail(e.target.value)} required type='email' placeholder='Wpisz swój e-mail...' />
                 </label>
                 <label>Hasło
-                <SignInput type='password' placeholder='Wpisz swoje hasło...' />
+                <SignInput onChange={(e) => setPassword(e.target.value.toLowerCase())}required type='password' placeholder='Wpisz swoje hasło...' />
                 </label>
-                <SignBtn>Zarejestruj</SignBtn>
-
-
-
+                <SignBtn type="submit">Zarejestruj</SignBtn>
             </form>
         </SignDiv>
+        <InfoBtn onClick={() => history.push('/Home')}>Wróć na stronę główną</InfoBtn>
         </div>
     )
 }

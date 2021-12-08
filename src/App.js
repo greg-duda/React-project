@@ -13,6 +13,8 @@ import Timer from './Components/Timer'
 import Register from './Components/Register';
 import Login from './Components/Login';
 import About from './Components/About';
+import CharDetails from './Components/CharDetails';
+import Succes from './Components/Succes';
 
  function App() {
   return (
@@ -21,7 +23,7 @@ import About from './Components/About';
       <Nav />
       <div className='content'>
       <Switch>
-        <Route exact path='/'>
+        <Route path='/Home'>
           <Home />
         </Route>
         <Route path='/Counter'>
@@ -31,7 +33,7 @@ import About from './Components/About';
           <Characters />
         </Route>
         <Route path='/Timer'>
-          <Timer />
+          <Timer defaultValue={20000} />
         </Route>
         <Route path='/Register'>
           <Register />
@@ -41,6 +43,12 @@ import About from './Components/About';
         </Route>
         <Route path='/About'>
           <About />
+        </Route>
+        <Route path="/:name/:id">
+          <CharDetails />
+        </Route>
+        <Route path="/Succes">
+          <Succes />
         </Route>
       </Switch>
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-  const StylInput = styled.input`
+  export const StylInput = styled.input`
   margin: 0 auto;
   display: block;
   height: 50px;
@@ -91,7 +91,7 @@ const Home = () => {
     return (
         <div className='content'>
             <div className='contentImage'>
-                <StylInput placeholder='Nic się nie stanie jeśli coś tu wpiszesz' id='homeInput' type='text'></StylInput>
+                <StylInput placeholder='Nic się nie stanie jeśli coś tu wpiszesz'  type='text'></StylInput>
                 <StylBtn>Przycisk</StylBtn>
             </div>
             <HaJeden>Co chciałbyś dzisiaj robić?</HaJeden>

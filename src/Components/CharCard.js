@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CharCard = ({ name, species, image, status, gender, id}) => {
 
 
  return(
+    <Link to={`/${name}/${id}`}>
     <div className='card' data-name={name}>
         <img className='charImage' alt={name} src={image}>
         </img>
@@ -14,6 +16,7 @@ const CharCard = ({ name, species, image, status, gender, id}) => {
             <h5>{gender}</h5>
         </div>
     </div>
+    </Link>
  )
  }
 export default CharCard
