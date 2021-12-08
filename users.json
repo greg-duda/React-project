@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "email": "gasgdasgd@wp.pl",
+      "password": "asdjsadjsa",
+      "name": "asdsadsa",
+      "surname": "asjdasjda",
+      "id": 1
+    },
+    {
+      "name": "hashdashd",
+      "surname": "hsahdash",
+      "email": "ewddwdd@gmail.com",
+      "password": "plekek442",
+      "id": 2
+    },
+    {
+      "name": "greg",
+      "surname": "duda",
+      "email": "g@wp.pl",
+      "password": "greg",
+      "id": 3
+    },
+    {
+      "name": "jan",
+      "surname": "kowalski",
+      "email": "janek123@wp.pl",
+      "password": "janek",
+      "id": 4
+    },
+    {
+      "name": "grzegorz",
+      "surname": "duda",
+      "email": "grzed@wp.pl",
+      "password": "greg",
+      "id": 5
+    }
+  ]
+}
