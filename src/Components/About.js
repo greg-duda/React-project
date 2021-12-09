@@ -41,7 +41,7 @@ const {push} = useHistory()
                      <div className='devstock'></div>
                      <InfoBtn onClick={() => {
                          setShow((prevShow) => !prevShow)}}>{show ? "Ukryj info" : "Pokaz info"}</InfoBtn>{show? <Info tel="661-778-000" email="greg.duda96@gmail.com" age="24" surname="Duda" name="Grzegorz" /> : null }
-                         <InfoBtn onClick={() => push('/Home')}>Wróć na stronę główną</InfoBtn>
+                         <InfoBtn onClick={() => push('/')}>Wróć na stronę główną</InfoBtn>
                 </div>
                 
             </div>
