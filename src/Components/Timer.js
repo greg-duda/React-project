@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { HaJeden } from './Home'
 
+import { HaJeden } from './Home'
 
 const styledTimer = {
     fontSize: '25px',
@@ -21,14 +21,12 @@ const Timer = ( {defaultValue = 0}) => {
     const [timerOn, setTimerOn] = useState(false)
     useEffect(() => {
         let interval = null;
-        if(timerOn) {
+        if(!timerOn) return () => clearInterval(interval)
             interval=setInterval(() => {
             setTime(prev => prev + 10)
             }, 10)
-        } else {
-            clearInterval(interval)
-        }
-        return () => clearInterval(interval)
+            return () => clearInterval(interval)
+        
     },[timerOn])
 
     return(

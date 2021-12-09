@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 const InfoH = styled.h1 `
 text-align: center;
 color: whitesmoke;
@@ -21,17 +22,17 @@ text-align: center;
 color: whitesmoke;
 `
 
-const Info = (props) => {
+const Info = ({name, surname, age, email, tel}) => {
   
 
     return(
 
         <StyledInfo>
-            <InfoH>{props.name}</InfoH>
-            <InfoH>{props.surname}</InfoH>
-            <StyledP>{props.age} lata</StyledP>
-            <StyledP>{props.email}</StyledP>
-            <StyledP>{props.tel}</StyledP>
+            <InfoH>{name}</InfoH>
+            <InfoH>{surname}</InfoH>
+            <StyledP>{age} lata</StyledP>
+            <StyledP>{email}</StyledP>
+            <StyledP>{tel}</StyledP>
         </StyledInfo>
     )
 }

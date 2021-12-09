@@ -34,6 +34,20 @@
       "email": "grzed@wp.pl",
       "password": "greg",
       "id": 5
+    },
+    {
+      "name": "grzegorz",
+      "surname": "duda",
+      "email": "greg@wp.pl",
+      "password": "greg123",
+      "id": 6
+    },
+    {
+      "name": "test1",
+      "surname": "test1",
+      "email": "test1@wp.pl",
+      "password": "test1",
+      "id": 7
     }
   ]
 }

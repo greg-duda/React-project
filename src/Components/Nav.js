@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import Logo from '../Images/Logo.png'
+
 
 const Nav = () => {
     const linkStyle = {
@@ -41,7 +43,7 @@ const navstyle = {
             <div className='Logo'>
             </div>
             <div className='About'>
-            <Link style={linkStyle} to='/Home'>Home</Link>
+            <Link style={linkStyle} to='/'>Home</Link>
             <Link style={linkStyle} to='/About'>O mnie</Link>
             <Link style={linkStyle} to='/Timer'>Stoper</Link>
             <Link style={linkStyle} to='/Counter'>Licznik</Link>

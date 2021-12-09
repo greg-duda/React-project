@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import styled from 'styled-components';
+
 import CharCard from './CharCard';
 import { HaJeden, StylInput } from './Home';
 
@@ -55,13 +56,13 @@ function Characters() {
         setInput(e.target.value)
     }
     const nextPg = () => {
-        setCurrentPage(page + 1)
+        setCurrentPage((prevPage) => prevPage + 1)
     }
     const prevPg = () => {
-        setCurrentPage(page - 1)
+        setCurrentPage((prevPage) => prevPage - 1)
     }
     const sortHandler = () => {
-        setSort(!sort)
+        setSort((prevSort) => !prevSort)
     }
     
     useEffect(() => {
@@ -103,32 +104,10 @@ function Characters() {
             
             {
                 postaci?.results
-                .sort((a, b) => {
-                    if(!sort) {
-                        return a.name.localeCompare(b.name)
-                    } else {
-                       return b.name.localeCompare(a.name)
-                    }
-                })
-                .filter((item) => {
-                    if(gender === '') {
-                        return true
-                    } else {
-                        return item.gender === gender
-                    }
-                })
-                .filter((item) => {
-                    if(input === ''){
-                        return item
-                    } return item.name.toLowerCase().includes(input.toLowerCase())
-                })
-                .filter((item) => {
-                    if(filter !== '') {
-                        return item.status === filter
-                    } return item
-                
-                })
-               
+                .sort((a, b) => !sort ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name))
+                .filter((item) => gender === '' ? true : item.gender === gender)
+                .filter((item) => input === '' ? item : item.name.toLowerCase().includes(input.toLowerCase()))
+                .filter((item) => filter !== '' ? item.status === filter : item)
                 .map(({ name, species, image, status, gender, id}) => <CharCard key={id} id={id}  name={name} species={species} image={image} status={status} gender={gender} />)
             }
         </div>
@@ -139,4 +118,3 @@ function Characters() {
 
 
 export default Characters
-
