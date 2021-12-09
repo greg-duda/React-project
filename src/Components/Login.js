@@ -52,7 +52,7 @@ const [surname, setSurname] = useState('')
 const history = useHistory()
 
 const historyHandler = () => {
-    history.push('/Home')
+    history.push('/')
 }
 const submitHandler = (e) => {
     e.preventDefault()
