@@ -48,12 +48,15 @@ function Characters() {
     const [sort, setSort] = useState(false)
     const onChangeHandler = (e) => {
         setFilter(e.target.value)
+        setCurrentPage(1)
     }
     const genderHandler = (e) => {
         setGender(e.target.value)
+        setCurrentPage(1)
     }
     const inputHandler = (e) => {
         setInput(e.target.value)
+        setCurrentPage(1)
     }
     const nextPg = () => {
         setCurrentPage((prevPage) => prevPage + 1)
