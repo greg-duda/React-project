@@ -79,7 +79,7 @@ const submitHandler = (e) => {
                 <SignBtn type="submit">Zarejestruj</SignBtn>
             </form>
         </SignDiv>
-        <InfoBtn onClick={() => push('/Home')}>Wróć na stronę główną</InfoBtn>
+        <InfoBtn onClick={() => push('/')}>Wróć na stronę główną</InfoBtn>
         </div>
     )
 }
