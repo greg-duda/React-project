@@ -95,7 +95,7 @@ function Characters() {
             <select onChange={genderHandler}>
                 <option value=''>All</option>
                 <option value='Male'>Male</option>
-                <option value='Female'>Woman</option>
+                <option value='Female'>Female</option>
                 <option value='Genderless'>Genderless</option>
                 <option value='unknown'>Unknown</option>
             </select></FilterBar>
