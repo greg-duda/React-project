@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 import CharCard from './CharCard'
 import { useHistory } from 'react-router'
 import styled from 'styled-components'
+
 import { InfoBtn } from './About'
 
 const CharDiv = styled.div `
@@ -17,10 +18,10 @@ margin: 0 auto;
 `
 const CharDetails = () => {
     const [postac, setPostac] = useState(null)
-    const history = useHistory()
+    const {go} = useHistory()
     const { id } = useParams()
     const handleClick = () => {
-        history.go(-1)
+        go(-1)
     }
 
     useEffect(() => {

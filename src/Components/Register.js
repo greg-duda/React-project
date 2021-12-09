@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, {useState} from 'react'
 import styled from 'styled-components'
+
 import { HaJeden } from './Home'
 import { useHistory } from 'react-router'
 import { InfoBtn } from './About'
+
 const SignDiv = styled.div`
 margin: 50px auto;
 background-color: whitesmoke;
@@ -43,7 +45,7 @@ const [name, setName]= useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [surname, setSurname] = useState('')
-const history = useHistory()
+const {push} = useHistory()
 
 
 
@@ -53,7 +55,7 @@ const submitHandler = (e) => {
     e.preventDefault()    
             const user = {name, surname, email, password}
             axios.post('http://localhost:3002/users', user)
-            .then(history.push('/Succes'))   
+            .then(push('/Success'))   
 }
     
 
@@ -77,7 +79,7 @@ const submitHandler = (e) => {
                 <SignBtn type="submit">Zarejestruj</SignBtn>
             </form>
         </SignDiv>
-        <InfoBtn onClick={() => history.push('/Home')}>Wróć na stronę główną</InfoBtn>
+        <InfoBtn onClick={() => push('/Home')}>Wróć na stronę główną</InfoBtn>
         </div>
     )
 }

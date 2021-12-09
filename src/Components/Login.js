@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+
 import { HaJeden } from './Home'
 import { useHistory } from 'react-router'
 import { InfoBtn } from './About'
