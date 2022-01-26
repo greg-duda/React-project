@@ -64,7 +64,7 @@ const submitHandler = (e) => {
             setError('')
         } else if(mailInput === '' && passwordInput === '') {
             setError('Wypełnij puste pola')
-        }
+        }  
          else {
             setError('Nieprawidlowe dane')
         }
